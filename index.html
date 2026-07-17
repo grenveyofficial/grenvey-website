@@ -1,10 +1,122 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Grenvey</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Grenvey is building simple, natural nutrition for everyday life." />
+  <title>Grenvey | Natural Nutrition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <h1>Welcome to Grenvey</h1>
-    <p>Website under development...</p>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Grenvey home">
+      <span class="brand-mark">G</span>
+      <span>Grenvey</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#vision">Vision</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content reveal">
+        <p class="eyebrow">Natural nutrition, thoughtfully made</p>
+        <h1>Something nourishing is taking shape.</h1>
+        <p class="hero-copy">
+          Grenvey is developing a simple, natural nutrition product designed for everyday life.
+          Our first product is currently under development.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#about">Discover Grenvey</a>
+          <a class="button button-secondary" href="mailto:grenveybusiness@gmail.com">Contact us</a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="orb orb-one"></div>
+        <div class="orb orb-two"></div>
+        <div class="product-card">
+          <span class="mini-label">COMING SOON</span>
+          <div class="leaf-icon">✦</div>
+          <h2>Grenvey</h2>
+          <p>Nature, made simple.</p>
+          <div class="card-line"></div>
+          <small>Product under development</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="section-heading reveal">
+        <p class="eyebrow">About Grenvey</p>
+        <h2>Built around simplicity, trust and better everyday choices.</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <span>01</span>
+          <h3>Natural-first thinking</h3>
+          <p>We are exploring ingredient-led nutrition with a focus on clean, familiar choices.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span>02</span>
+          <h3>Thoughtful development</h3>
+          <p>Our product is being carefully developed before we make any final claims or promises.</p>
+        </article>
+        <article class="feature-card reveal">
+          <span>03</span>
+          <h3>Everyday usefulness</h3>
+          <p>Grenvey aims to make good nutrition easier to understand and easier to include in daily life.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="vision-section" id="vision">
+      <div class="vision-copy reveal">
+        <p class="eyebrow light">Our vision</p>
+        <h2>Nutrition that feels natural, practical and honest.</h2>
+        <p>
+          We are at the product-development stage. As the formulation, testing and packaging progress,
+          this website will be updated with accurate product details.
+        </p>
+      </div>
+      <div class="status-card reveal">
+        <p>Current stage</p>
+        <strong>Product development</strong>
+        <div class="status-track"><span></span></div>
+        <small>More details will be shared after formulation and testing.</small>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-card reveal">
+        <div>
+          <p class="eyebrow">Stay connected</p>
+          <h2>Grenvey is coming soon.</h2>
+          <p>For business enquiries, collaborations or updates, contact us by email.</p>
+        </div>
+        <a class="button button-primary" href="mailto:grenveybusiness@gmail.com">
+          grenveybusiness@gmail.com
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-mark">G</span>
+      <span>Grenvey</span>
+    </a>
+    <p>© <span id="year"></span> Grenvey. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
