@@ -1,56 +1,2033 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Natural Nutrition | Grenvey</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<style>
-body{
-font-family:Arial,sans-serif;
-max-width:900px;
-margin:auto;
-padding:40px;
-line-height:1.8;
-background:#fafafa;
-color:#333;
-}
+  <meta
+    name="description"
+    content="Discover Grenvey's approach to thoughtful, responsible and everyday nutrition."
+  >
 
-h1{
-color:#2e7d32;
-}
+  <title>Nutrition | Grenvey</title>
 
-a{
-text-decoration:none;
-color:#2e7d32;
-font-weight:bold;
-}
-</style>
+  <style>
+    :root {
+      --forest: #103b2b;
+      --deep: #08261c;
+      --green: #286b4c;
+      --leaf: #7fa873;
+      --soft-leaf: #c2d9b8;
+      --cream: #f7f3e9;
+      --cream-dark: #ece5d7;
+      --white: #ffffff;
+      --text: #203229;
+      --muted: #68736d;
+      --gold: #e8bf52;
+      --almond: #b97842;
+      --date: #7c3f2c;
+      --pista: #a8b95f;
+      --pumpkin: #d9e2a8;
+      --border: rgba(16, 59, 43, 0.1);
+      --shadow: 0 28px 80px rgba(16, 59, 43, 0.12);
+    }
 
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page-shell {
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      padding: 22px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: var(--forest);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 1px solid rgba(16, 59, 43, 0.18);
+      border-radius: 999px;
+      text-decoration: none;
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .back-home:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .nutrition-hero {
+      position: relative;
+      min-height: 740px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1.03fr 0.97fr;
+      border-radius: 42px;
+      background:
+        radial-gradient(
+          circle at 82% 28%,
+          rgba(194, 217, 184, 0.23),
+          transparent 30%
+        ),
+        linear-gradient(135deg, var(--deep), var(--forest));
+      box-shadow: var(--shadow);
+    }
+
+    .nutrition-hero::before {
+      content: "";
+      position: absolute;
+      width: 650px;
+      height: 650px;
+      right: -250px;
+      top: -280px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    .nutrition-hero::after {
+      content: "";
+      position: absolute;
+      width: 820px;
+      height: 820px;
+      right: -410px;
+      bottom: -580px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 3;
+      padding: 95px 68px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      margin-bottom: 25px;
+      color: var(--soft-leaf);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--soft-leaf);
+    }
+
+    .hero-copy h1 {
+      max-width: 700px;
+      margin-bottom: 30px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(62px, 7vw, 104px);
+      font-weight: 500;
+      line-height: 0.95;
+      letter-spacing: -4px;
+    }
+
+    .hero-copy h1 span {
+      color: var(--soft-leaf);
+      font-style: italic;
+    }
+
+    .hero-copy p {
+      max-width: 610px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    /* HERO VISUAL */
+
+    .hero-visual {
+      position: relative;
+      z-index: 3;
+      min-height: 660px;
+    }
+
+    .visual-glow {
+      position: absolute;
+      width: 440px;
+      height: 440px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: rgba(194, 217, 184, 0.11);
+      filter: blur(12px);
+    }
+
+    .visual-ring {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ring-one {
+      width: 390px;
+      height: 390px;
+    }
+
+    .ring-two {
+      width: 530px;
+      height: 530px;
+    }
+
+    .food-float {
+      position: absolute;
+      filter: drop-shadow(0 24px 28px rgba(0, 0, 0, 0.24));
+      animation: floatFood 6s ease-in-out infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .food-float svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+      overflow: visible;
+    }
+
+    .banana-float {
+      width: 235px;
+      height: 155px;
+      top: 50px;
+      right: 12px;
+      transform: rotate(-8deg);
+    }
+
+    .almond-float {
+      width: 110px;
+      height: 155px;
+      top: 180px;
+      left: 28px;
+      transform: rotate(-18deg);
+      animation-delay: -1.2s;
+    }
+
+    .walnut-float {
+      width: 175px;
+      height: 160px;
+      left: 47%;
+      top: 45%;
+      transform: translate(-50%, -50%) rotate(-7deg);
+      animation-delay: -2.2s;
+    }
+
+    .dates-float {
+      width: 155px;
+      height: 128px;
+      right: 22px;
+      bottom: 105px;
+      transform: rotate(8deg);
+      animation-delay: -3.1s;
+    }
+
+    .pista-float {
+      width: 145px;
+      height: 120px;
+      left: 45px;
+      bottom: 75px;
+      transform: rotate(-11deg);
+      animation-delay: -4s;
+    }
+
+    .seed-float {
+      width: 120px;
+      height: 105px;
+      right: 180px;
+      bottom: 20px;
+      transform: rotate(8deg);
+      animation-delay: -4.8s;
+    }
+
+    .leaf-float {
+      width: 115px;
+      height: 90px;
+      right: 155px;
+      top: 210px;
+      transform: rotate(18deg);
+      opacity: 0.85;
+      animation-delay: -5.3s;
+    }
+
+    @keyframes floatFood {
+      0%,
+      100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -17px;
+      }
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy-section {
+      padding: 130px 20px 110px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .philosophy-section h2 {
+      max-width: 900px;
+      margin: 0 auto 28px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(45px, 6vw, 76px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .philosophy-section p {
+      max-width: 750px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    /* VISUAL STATEMENT */
+
+    .statement-section {
+      position: relative;
+      min-height: 670px;
+      overflow: hidden;
+      margin-bottom: 110px;
+      display: flex;
+      align-items: center;
+      border-radius: 42px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .statement-copy {
+      position: relative;
+      z-index: 3;
+      width: 60%;
+      padding: 90px 75px;
+    }
+
+    .statement-copy h2 {
+      margin-bottom: 25px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(52px, 7vw, 90px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .statement-copy p {
+      max-width: 650px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .statement-art {
+      position: absolute;
+      width: 47%;
+      height: 100%;
+      right: 0;
+      top: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(127, 168, 115, 0.36),
+          transparent 48%
+        ),
+        #eaf2e6;
+    }
+
+    .statement-art::before {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      right: -90px;
+      top: 100px;
+      border: 1px solid rgba(16, 59, 43, 0.12);
+      border-radius: 50%;
+    }
+
+    .statement-food {
+      position: absolute;
+      filter: drop-shadow(0 22px 28px rgba(16, 59, 43, 0.19));
+      animation: slowFloat 7s ease-in-out infinite;
+    }
+
+    .statement-food svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .statement-banana {
+      width: 205px;
+      height: 140px;
+      top: 85px;
+      left: 34px;
+      transform: rotate(19deg);
+    }
+
+    .statement-walnut {
+      width: 170px;
+      height: 150px;
+      left: 105px;
+      bottom: 75px;
+      transform: rotate(-11deg);
+      animation-delay: -2s;
+    }
+
+    .statement-almond {
+      width: 112px;
+      height: 155px;
+      right: 40px;
+      bottom: 115px;
+      transform: rotate(20deg);
+      animation-delay: -3s;
+    }
+
+    .statement-seeds {
+      width: 145px;
+      height: 110px;
+      right: 40px;
+      top: 225px;
+      animation-delay: -4s;
+    }
+
+    @keyframes slowFloat {
+      0%,
+      100% {
+        translate: 0 0;
+      }
+
+      50% {
+        translate: 0 -12px;
+      }
+    }
+
+    /* FOUNDATIONS */
+
+    .pillars-section {
+      padding: 30px 0 120px;
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 17px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 5vw, 68px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .pillar-card {
+      min-height: 380px;
+      padding: 38px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 18px 50px rgba(16, 59, 43, 0.07);
+      transition: 0.35s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 65px rgba(16, 59, 43, 0.13);
+    }
+
+    .pillar-number {
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      border-radius: 19px;
+      background: #e8f1e4;
+      color: var(--forest);
+      font-weight: 800;
+    }
+
+    .pillar-card h3 {
+      margin-bottom: 15px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 34px;
+      font-weight: 500;
+      line-height: 1.12;
+    }
+
+    .pillar-card p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* JOURNEY */
+
+    .journey-section {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 110px;
+      padding: 95px 70px;
+      border-radius: 42px;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 85% 15%,
+          rgba(127, 168, 115, 0.3),
+          transparent 32%
+        ),
+        linear-gradient(135deg, var(--deep), var(--forest));
+    }
+
+    .journey-section::after {
+      content: "";
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      right: -250px;
+      bottom: -350px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    .journey-heading {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+      margin-bottom: 70px;
+    }
+
+    .journey-heading .section-label {
+      color: var(--soft-leaf);
+    }
+
+    .journey-heading h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 5vw, 70px);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: -2px;
+    }
+
+    .journey-track {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .journey-step {
+      position: relative;
+      padding-top: 35px;
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .journey-step::before {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      left: 0;
+      top: -7px;
+      border-radius: 50%;
+      background: var(--soft-leaf);
+      box-shadow: 0 0 0 7px rgba(194, 217, 184, 0.1);
+    }
+
+    .journey-step span {
+      display: block;
+      margin-bottom: 12px;
+      color: var(--soft-leaf);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .journey-step h3 {
+      margin-bottom: 10px;
+      font-size: 21px;
+    }
+
+    .journey-step p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 14px;
+    }
+
+    /* PRINCIPLES */
+
+    .principles-section {
+      padding-bottom: 120px;
+    }
+
+    .principles-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .principles-copy h2 {
+      margin-bottom: 22px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 6vw, 74px);
+      font-weight: 500;
+      line-height: 1.03;
+      letter-spacing: -2px;
+    }
+
+    .principles-copy p {
+      max-width: 570px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .principles-list {
+      display: grid;
+      gap: 17px;
+    }
+
+    .principle-row {
+      display: grid;
+      grid-template-columns: 55px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      transition: 0.3s ease;
+    }
+
+    .principle-row:hover {
+      transform: translateX(8px);
+      box-shadow: 0 16px 35px rgba(16, 59, 43, 0.09);
+    }
+
+    .principle-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--forest);
+      background: #e8f1e4;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    .principle-row h3 {
+      margin-bottom: 3px;
+      color: var(--forest);
+      font-size: 19px;
+    }
+
+    .principle-row p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* CTA */
+
+    .closing-section {
+      position: relative;
+      min-height: 530px;
+      overflow: hidden;
+      margin-bottom: 55px;
+      padding: 90px 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 42px;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(127, 168, 115, 0.3),
+          transparent 30%
+        ),
+        linear-gradient(135deg, var(--deep), #1f5d42);
+    }
+
+    .closing-section::before,
+    .closing-section::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .closing-section::before {
+      width: 500px;
+      height: 500px;
+      left: -200px;
+      bottom: -280px;
+    }
+
+    .closing-section::after {
+      width: 670px;
+      height: 670px;
+      right: -280px;
+      top: -390px;
+    }
+
+    .closing-food {
+      position: absolute;
+      opacity: 0.28;
+      filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.2));
+      animation: slowFloat 7s ease-in-out infinite;
+    }
+
+    .closing-food svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .closing-banana {
+      width: 205px;
+      height: 145px;
+      left: 45px;
+      top: 55px;
+      transform: rotate(17deg);
+    }
+
+    .closing-almond {
+      width: 112px;
+      height: 155px;
+      right: 75px;
+      bottom: 55px;
+      transform: rotate(22deg);
+      animation-delay: -2s;
+    }
+
+    .closing-seeds {
+      width: 160px;
+      height: 115px;
+      left: 70px;
+      bottom: 55px;
+      animation-delay: -4s;
+    }
+
+    .closing-content {
+      position: relative;
+      z-index: 3;
+      max-width: 850px;
+    }
+
+    .closing-content h2 {
+      margin-bottom: 24px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(50px, 7vw, 86px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .closing-content p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 18px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 36px;
+      padding: 16px 29px;
+      border-radius: 999px;
+      color: var(--forest);
+      background: var(--white);
+      font-weight: 800;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    footer {
+      padding: 0 20px 45px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .nutrition-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 80px 48px 25px;
+      }
+
+      .hero-visual {
+        min-height: 540px;
+      }
+
+      .statement-copy {
+        width: 100%;
+        padding: 75px 48px 440px;
+      }
+
+      .statement-art {
+        width: 100%;
+        height: 400px;
+        top: auto;
+        bottom: 0;
+      }
+
+      .pillars-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pillar-card {
+        min-height: 300px;
+      }
+
+      .journey-track {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .journey-step {
+        padding: 0 0 0 35px;
+        border-top: 0;
+        border-left: 1px solid rgba(255, 255, 255, 0.18);
+      }
+
+      .journey-step::before {
+        left: -7px;
+        top: 5px;
+      }
+
+      .principles-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(100% - 24px, 1240px);
+      }
+
+      .topbar {
+        padding: 16px 0;
+      }
+
+      .nutrition-hero,
+      .statement-section,
+      .journey-section,
+      .closing-section {
+        border-radius: 28px;
+      }
+
+      .hero-copy {
+        padding: 65px 26px 10px;
+      }
+
+      .hero-copy h1 {
+        font-size: 56px;
+        letter-spacing: -2px;
+      }
+
+      .hero-copy p {
+        font-size: 17px;
+      }
+
+      .hero-visual {
+        min-height: 420px;
+        transform: scale(0.78);
+        transform-origin: top center;
+      }
+
+      .philosophy-section {
+        padding: 90px 10px 75px;
+      }
+
+      .philosophy-section h2 {
+        font-size: 43px;
+      }
+
+      .statement-copy {
+        padding: 60px 25px 370px;
+      }
+
+      .statement-copy h2 {
+        font-size: 49px;
+        letter-spacing: -2px;
+      }
+
+      .statement-art {
+        height: 340px;
+      }
+
+      .pillars-section {
+        padding-bottom: 85px;
+      }
+
+      .pillar-card {
+        min-height: 280px;
+        padding: 30px 26px;
+        border-radius: 24px;
+      }
+
+      .journey-section {
+        padding: 70px 26px;
+      }
+
+      .principles-section {
+        padding-bottom: 85px;
+      }
+
+      .principle-row {
+        grid-template-columns: 48px 1fr;
+        padding: 19px;
+      }
+
+      .principle-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
+      }
+
+      .closing-section {
+        min-height: 450px;
+        padding: 70px 24px;
+      }
+
+      .closing-food {
+        opacity: 0.17;
+      }
+
+      .closing-content h2 {
+        font-size: 48px;
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand {
+        font-size: 21px;
+      }
+
+      .back-home {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .hero-copy h1 {
+        font-size: 47px;
+      }
+
+      .hero-visual {
+        min-height: 350px;
+        transform: scale(0.62);
+      }
+
+      .statement-copy h2 {
+        font-size: 43px;
+      }
+
+      .section-heading h2,
+      .journey-heading h2,
+      .principles-copy h2 {
+        font-size: 42px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<a href="index.html">← Back to Home</a>
+  <!-- REUSABLE SVG SYMBOLS -->
 
-<h1>Natural Nutrition</h1>
+  <svg
+    width="0"
+    height="0"
+    style="position:absolute"
+    aria-hidden="true"
+  >
 
-<p>
-Grenvey believes nutrition should come from familiar, wholesome ingredients whenever possible.
-</p>
+    <defs>
 
-<p>
-Our products are being carefully formulated using fruits, nuts and other natural ingredients with a focus on everyday wellness.
-</p>
+      <!-- BANANA -->
 
-<p>
-We avoid making health claims until our formulations are fully tested and compliant with food regulations.
-</p>
+      <symbol id="banana-shape" viewBox="0 0 260 170">
 
-<p>
-Our goal is to deliver products that are simple, honest and enjoyable for daily use.
-</p>
+        <path
+          d="M30 32
+             C58 77, 104 112, 164 113
+             C194 113, 218 98, 231 72
+             C218 120, 183 145, 137 145
+             C83 145, 39 111, 15 65
+             C10 52, 16 39, 30 32Z"
+          fill="#E8BF52"
+        />
+
+        <path
+          d="M30 32
+             C56 74, 103 103, 164 104
+             C191 104, 212 92, 225 73"
+          fill="none"
+          stroke="#F6D978"
+          stroke-width="10"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M22 38 L10 22"
+          stroke="#79552F"
+          stroke-width="14"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M228 74 L243 61"
+          stroke="#79552F"
+          stroke-width="15"
+          stroke-linecap="round"
+        />
+
+        <circle
+          cx="82"
+          cy="116"
+          r="4"
+          fill="#B28A35"
+          opacity="0.7"
+        />
+
+        <circle
+          cx="132"
+          cy="131"
+          r="4"
+          fill="#B28A35"
+          opacity="0.7"
+        />
+
+      </symbol>
+
+      <!-- ALMOND -->
+
+      <symbol id="almond-shape" viewBox="0 0 120 170">
+
+        <path
+          d="M59 9
+             C90 35, 108 72, 96 113
+             C87 145, 69 160, 59 163
+             C47 158, 28 143, 20 112
+             C9 72, 28 34, 59 9Z"
+          fill="#B97842"
+        />
+
+        <path
+          d="M59 18
+             C66 56, 66 101, 59 151"
+          fill="none"
+          stroke="#E2B27C"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M35 48 C49 54, 69 54, 84 47"
+          fill="none"
+          stroke="#8E552C"
+          stroke-width="2"
+          opacity="0.55"
+        />
+
+        <path
+          d="M29 80 C47 87, 71 87, 91 78"
+          fill="none"
+          stroke="#8E552C"
+          stroke-width="2"
+          opacity="0.5"
+        />
+
+        <path
+          d="M28 112 C45 120, 69 120, 90 111"
+          fill="none"
+          stroke="#8E552C"
+          stroke-width="2"
+          opacity="0.45"
+        />
+
+      </symbol>
+
+      <!-- WALNUT -->
+
+      <symbol id="walnut-shape" viewBox="0 0 190 165">
+
+        <path
+          d="M94 17
+             C74 2, 44 11, 33 34
+             C7 39, 5 72, 20 90
+             C8 116, 30 143, 57 142
+             C69 159, 87 156, 96 145
+             C106 157, 126 159, 137 142
+             C165 143, 182 117, 170 91
+             C185 70, 175 38, 154 34
+             C143 10, 114 2, 94 17Z"
+          fill="#A66D3E"
+        />
+
+        <path
+          d="M95 22
+             C88 43, 104 58, 94 77
+             C86 93, 103 109, 95 142"
+          fill="none"
+          stroke="#6E4428"
+          stroke-width="6"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M52 39
+             C38 54, 53 64, 42 79
+             C31 95, 50 105, 42 125"
+          fill="none"
+          stroke="#74472A"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M136 39
+             C151 53, 138 67, 149 81
+             C160 96, 140 108, 147 126"
+          fill="none"
+          stroke="#74472A"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M67 27
+             C60 48, 76 55, 69 72
+             C61 90, 78 102, 70 132"
+          fill="none"
+          stroke="#C28A58"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M121 27
+             C130 46, 114 57, 122 73
+             C130 91, 112 103, 121 133"
+          fill="none"
+          stroke="#C28A58"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+      </symbol>
+
+      <!-- DATES -->
+
+      <symbol id="dates-shape" viewBox="0 0 180 140">
+
+        <ellipse
+          cx="56"
+          cy="73"
+          rx="35"
+          ry="53"
+          transform="rotate(-18 56 73)"
+          fill="#793E2C"
+        />
+
+        <ellipse
+          cx="118"
+          cy="69"
+          rx="34"
+          ry="52"
+          transform="rotate(17 118 69)"
+          fill="#8F4B31"
+        />
+
+        <path
+          d="M45 35 C54 60, 54 91, 48 113"
+          fill="none"
+          stroke="#BC7654"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M127 32 C118 60, 120 91, 128 109"
+          fill="none"
+          stroke="#C87F5C"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M54 19 C68 6, 81 10, 91 24"
+          fill="none"
+          stroke="#6C7E3D"
+          stroke-width="7"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M119 17 C107 7, 97 9, 91 24"
+          fill="none"
+          stroke="#6C7E3D"
+          stroke-width="7"
+          stroke-linecap="round"
+        />
+
+      </symbol>
+
+      <!-- PISTACHIO -->
+
+      <symbol id="pista-shape" viewBox="0 0 180 135">
+
+        <path
+          d="M21 81
+             C18 45, 43 19, 76 19
+             C76 59, 55 91, 21 81Z"
+          fill="#DCC7A1"
+        />
+
+        <path
+          d="M36 72
+             C35 44, 52 28, 72 29
+             C68 54, 54 73, 36 72Z"
+          fill="#A7BA60"
+        />
+
+        <path
+          d="M101 25
+             C137 20, 163 47, 159 84
+             C125 94, 103 66, 101 25Z"
+          fill="#DCC7A1"
+        />
+
+        <path
+          d="M108 34
+             C131 33, 148 50, 146 74
+             C125 77, 110 58, 108 34Z"
+          fill="#A7BA60"
+        />
+
+        <path
+          d="M58 90
+             C81 67, 107 68, 128 90
+             C108 117, 78 117, 58 90Z"
+          fill="#DCC7A1"
+        />
+
+        <path
+          d="M69 90
+             C84 76, 102 77, 117 91
+             C104 105, 82 105, 69 90Z"
+          fill="#A7BA60"
+        />
+
+      </symbol>
+
+      <!-- PUMPKIN SEEDS -->
+
+      <symbol id="seed-shape" viewBox="0 0 180 130">
+
+        <g fill="#DCE6B0">
+
+          <ellipse
+            cx="38"
+            cy="47"
+            rx="14"
+            ry="29"
+            transform="rotate(-35 38 47)"
+          />
+
+          <ellipse
+            cx="79"
+            cy="33"
+            rx="13"
+            ry="28"
+            transform="rotate(18 79 33)"
+          />
+
+          <ellipse
+            cx="122"
+            cy="48"
+            rx="14"
+            ry="29"
+            transform="rotate(38 122 48)"
+          />
+
+          <ellipse
+            cx="58"
+            cy="91"
+            rx="14"
+            ry="29"
+            transform="rotate(30 58 91)"
+          />
+
+          <ellipse
+            cx="108"
+            cy="91"
+            rx="14"
+            ry="29"
+            transform="rotate(-25 108 91)"
+          />
+
+          <ellipse
+            cx="149"
+            cy="82"
+            rx="12"
+            ry="26"
+            transform="rotate(50 149 82)"
+          />
+
+        </g>
+
+        <g
+          fill="none"
+          stroke="#A9B776"
+          stroke-width="2"
+          opacity="0.7"
+        >
+
+          <path d="M26 59 L49 35" />
+          <path d="M75 58 L83 7" />
+          <path d="M108 32 L137 65" />
+          <path d="M44 73 L72 108" />
+          <path d="M95 109 L122 70" />
+          <path d="M134 66 L161 97" />
+
+        </g>
+
+      </symbol>
+
+      <!-- LEAF -->
+
+      <symbol id="leaf-shape" viewBox="0 0 150 110">
+
+        <path
+          d="M15 84
+             C18 35, 60 10, 132 16
+             C119 76, 75 105, 15 84Z"
+          fill="#7FA873"
+        />
+
+        <path
+          d="M24 82 C62 59, 95 39, 126 23"
+          fill="none"
+          stroke="#C8DCBF"
+          stroke-width="4"
+          stroke-linecap="round"
+        />
+
+        <path
+          d="M58 62 L49 40"
+          fill="none"
+          stroke="#B6D0AC"
+          stroke-width="3"
+        />
+
+        <path
+          d="M82 49 L76 27"
+          fill="none"
+          stroke="#B6D0AC"
+          stroke-width="3"
+        />
+
+        <path
+          d="M62 61 L83 75"
+          fill="none"
+          stroke="#B6D0AC"
+          stroke-width="3"
+        />
+
+        <path
+          d="M91 45 L111 56"
+          fill="none"
+          stroke="#B6D0AC"
+          stroke-width="3"
+        />
+
+      </symbol>
+
+    </defs>
+
+  </svg>
+
+  <header class="topbar">
+
+    <div class="page-shell topbar-inner">
+
+      <a href="index.html" class="brand">
+        Grenvey
+      </a>
+
+      <a href="index.html" class="back-home">
+        <span>←</span>
+        Back to Home
+      </a>
+
+    </div>
+
+  </header>
+
+  <main>
+
+    <div class="page-shell">
+
+      <!-- HERO -->
+
+      <section class="nutrition-hero">
+
+        <div class="hero-copy">
+
+          <div class="hero-label">
+            Our Nutrition Philosophy
+          </div>
+
+          <h1>
+            Nutrition,
+            thoughtfully
+            <span>crafted.</span>
+          </h1>
+
+          <p>
+            Inspired by familiar foods and guided by responsible
+            development, Grenvey aims to make everyday nutrition
+            feel simple, meaningful and easy to trust.
+          </p>
+
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+
+          <div class="visual-glow"></div>
+
+          <div class="visual-ring ring-one"></div>
+          <div class="visual-ring ring-two"></div>
+
+          <div class="food-float banana-float">
+            <svg viewBox="0 0 260 170">
+              <use href="#banana-shape"></use>
+            </svg>
+          </div>
+
+          <div class="food-float almond-float">
+            <svg viewBox="0 0 120 170">
+              <use href="#almond-shape"></use>
+            </svg>
+          </div>
+
+          <div class="food-float walnut-float">
+            <svg viewBox="0 0 190 165">
+              <use href="#walnut-shape"></use>
+            </svg>
+          </div>
+
+          <div class="food-float dates-float">
+            <svg viewBox="0 0 180 140">
+              <use href="#dates-shape"></use>
+            </svg>
+          </div>
+
+          <div class="food-float pista-float">
+            <svg viewBox="0 0 180 135">
+              <use href="#pista-shape"></use>
+            </svg>
+          </div>
+
+          <div class="food-float seed-float">
+            <svg viewBox="0 0 180 130">
+              <use href="#seed-shape"></use>
+            </svg>
+          </div>
+
+          <div class="food-float leaf-float">
+            <svg viewBox="0 0 150 110">
+              <use href="#leaf-shape"></use>
+            </svg>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- PHILOSOPHY -->
+
+      <section class="philosophy-section reveal">
+
+        <span class="section-label">
+          What Nutrition Means to Us
+        </span>
+
+        <h2>
+          Nature meets modern everyday life.
+        </h2>
+
+        <p>
+          We believe good nutrition should begin with familiarity,
+          thoughtful choices and responsible innovation — without
+          unnecessary confusion or exaggerated promises.
+        </p>
+
+      </section>
+
+      <!-- STATEMENT -->
+
+      <section class="statement-section reveal">
+
+        <div class="statement-copy">
+
+          <span class="section-label">
+            Designed Around Real Life
+          </span>
+
+          <h2>
+            Not trends.<br>
+            Not shortcuts.
+          </h2>
+
+          <p>
+            Grenvey is being built for people who want nutrition
+            that fits naturally into their routines. Our approach
+            begins with understanding, continues through responsible
+            development and improves through real experience.
+          </p>
+
+        </div>
+
+        <div class="statement-art" aria-hidden="true">
+
+          <div class="statement-food statement-banana">
+            <svg viewBox="0 0 260 170">
+              <use href="#banana-shape"></use>
+            </svg>
+          </div>
+
+          <div class="statement-food statement-walnut">
+            <svg viewBox="0 0 190 165">
+              <use href="#walnut-shape"></use>
+            </svg>
+          </div>
+
+          <div class="statement-food statement-almond">
+            <svg viewBox="0 0 120 170">
+              <use href="#almond-shape"></use>
+            </svg>
+          </div>
+
+          <div class="statement-food statement-seeds">
+            <svg viewBox="0 0 180 130">
+              <use href="#seed-shape"></use>
+            </svg>
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- FOUNDATIONS -->
+
+      <section class="pillars-section reveal">
+
+        <div class="section-heading">
+
+          <span class="section-label">
+            Three Foundations
+          </span>
+
+          <h2>
+            What guides every Grenvey idea.
+          </h2>
+
+          <p>
+            These principles remain constant even as our products
+            are researched, developed and refined.
+          </p>
+
+        </div>
+
+        <div class="pillars-grid">
+
+          <article class="pillar-card">
+
+            <div class="pillar-number">
+              01
+            </div>
+
+            <div>
+
+              <h3>
+                Thoughtfully developed
+              </h3>
+
+              <p>
+                Every idea begins with careful planning,
+                genuine needs and a clear purpose —
+                not assumptions.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="pillar-card">
+
+            <div class="pillar-number">
+              02
+            </div>
+
+            <div>
+
+              <h3>
+                Guided responsibly
+              </h3>
+
+              <p>
+                We value research, professional guidance,
+                evaluation and responsible decision-making
+                throughout development.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="pillar-card">
+
+            <div class="pillar-number">
+              03
+            </div>
+
+            <div>
+
+              <h3>
+                Made for everyday life
+              </h3>
+
+              <p>
+                Nutrition should feel practical,
+                approachable and easy to include
+                in a modern daily routine.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+      <!-- JOURNEY -->
+
+      <section class="journey-section reveal">
+
+        <div class="journey-heading">
+
+          <span class="section-label">
+            Our Development Journey
+          </span>
+
+          <h2>
+            From purpose to progress.
+          </h2>
+
+        </div>
+
+        <div class="journey-track">
+
+          <div class="journey-step">
+
+            <span>01</span>
+
+            <h3>
+              Understand
+            </h3>
+
+            <p>
+              Begin with real needs and everyday routines.
+            </p>
+
+          </div>
+
+          <div class="journey-step">
+
+            <span>02</span>
+
+            <h3>
+              Research
+            </h3>
+
+            <p>
+              Explore ideas with care and responsibility.
+            </p>
+
+          </div>
+
+          <div class="journey-step">
+
+            <span>03</span>
+
+            <h3>
+              Develop
+            </h3>
+
+            <p>
+              Turn purpose into a carefully considered product.
+            </p>
+
+          </div>
+
+          <div class="journey-step">
+
+            <span>04</span>
+
+            <h3>
+              Evaluate
+            </h3>
+
+            <p>
+              Review quality, usability and overall experience.
+            </p>
+
+          </div>
+
+          <div class="journey-step">
+
+            <span>05</span>
+
+            <h3>
+              Improve
+            </h3>
+
+            <p>
+              Keep learning, refining and growing responsibly.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- PRINCIPLES -->
+
+      <section class="principles-section reveal">
+
+        <div class="principles-grid">
+
+          <div class="principles-copy">
+
+            <span class="section-label">
+              What We Believe
+            </span>
+
+            <h2>
+              Good nutrition does not need more noise.
+            </h2>
+
+            <p>
+              Our goal is to communicate clearly,
+              develop carefully and create products
+              that people can understand and confidently
+              include in everyday life.
+            </p>
+
+          </div>
+
+          <div class="principles-list">
+
+            <div class="principle-row">
+
+              <div class="principle-icon">
+                01
+              </div>
+
+              <div>
+
+                <h3>
+                  No exaggerated promises
+                </h3>
+
+                <p>
+                  Trust is more important than attention.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="principle-row">
+
+              <div class="principle-icon">
+                02
+              </div>
+
+              <div>
+
+                <h3>
+                  No unnecessary complexity
+                </h3>
+
+                <p>
+                  Nutrition should be understandable
+                  and approachable.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="principle-row">
+
+              <div class="principle-icon">
+                03
+              </div>
+
+              <div>
+
+                <h3>
+                  No confusing communication
+                </h3>
+
+                <p>
+                  Clear information helps people
+                  make better choices.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="principle-row">
+
+              <div class="principle-icon">
+                04
+              </div>
+
+              <div>
+
+                <h3>
+                  No careless shortcuts
+                </h3>
+
+                <p>
+                  Responsible development takes patience
+                  and purpose.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <!-- CLOSING CTA -->
+
+      <section class="closing-section">
+
+        <div class="closing-food closing-banana">
+          <svg viewBox="0 0 260 170">
+            <use href="#banana-shape"></use>
+          </svg>
+        </div>
+
+        <div class="closing-food closing-almond">
+          <svg viewBox="0 0 120 170">
+            <use href="#almond-shape"></use>
+          </svg>
+        </div>
+
+        <div class="closing-food closing-seeds">
+          <svg viewBox="0 0 180 130">
+            <use href="#seed-shape"></use>
+          </svg>
+        </div>
+
+        <div class="closing-content">
+
+          <div class="hero-label">
+            The Grenvey Approach
+          </div>
+
+          <h2>
+            Simple nutrition.<br>
+            Thoughtfully developed.
+          </h2>
+
+          <p>
+            The products are still being carefully developed.
+            The purpose is already clear — to build everyday
+            nutrition with honesty, responsibility and long-term trust.
+          </p>
+
+          <a
+            href="index.html#contact"
+            class="cta-button"
+          >
+            Connect with Grenvey
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Grenvey. Thoughtful nutrition for everyday life.
+  </footer>
+
+  <script>
+    const revealItems = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.14
+      }
+    );
+
+    revealItems.forEach((item) => {
+      observer.observe(item);
+    });
+  </script>
 
 </body>
+
 </html>

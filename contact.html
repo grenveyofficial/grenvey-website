@@ -1,84 +1,993 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Contact Grenvey</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Contact Grenvey for business, product development, manufacturing, distribution and general enquiries."
+  >
+
+  <title>Contact | Grenvey</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
-      line-height: 1.8;
-      background: #fafafa;
-      color: #333;
+    :root {
+      --deep: #08271c;
+      --forest: #123d2c;
+      --green: #2d7653;
+      --leaf: #bcd6b2;
+      --cream: #f7f4eb;
+      --white: #ffffff;
+      --text: #203229;
+      --muted: #6b756f;
+      --border: rgba(18, 61, 44, 0.11);
+      --shadow: 0 24px 70px rgba(18, 61, 44, 0.12);
     }
 
-    h1 {
-      color: #2e7d32;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
-      color: #2e7d32;
-      font-weight: bold;
+      color: inherit;
+    }
+
+    .page-shell {
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      padding: 22px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--forest);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
       text-decoration: none;
     }
 
-    .contact-box {
-      margin-top: 30px;
-      padding: 24px;
-      background: #ffffff;
-      border: 1px solid #e2e2e2;
-      border-radius: 12px;
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 11px 18px;
+      border: 1px solid rgba(18, 61, 44, 0.18);
+      border-radius: 999px;
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .back-home:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .contact-hero {
+      position: relative;
+      min-height: 700px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      border-radius: 42px;
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(188, 214, 178, 0.24),
+          transparent 28%
+        ),
+        linear-gradient(135deg, var(--deep), var(--forest));
+      box-shadow: var(--shadow);
+    }
+
+    .contact-hero::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      left: -230px;
+      bottom: -280px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    .contact-hero::after {
+      content: "";
+      position: absolute;
+      width: 730px;
+      height: 730px;
+      right: -350px;
+      top: -410px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      padding: 90px 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      margin-bottom: 24px;
+      color: var(--leaf);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--leaf);
+    }
+
+    .hero-copy h1 {
+      max-width: 650px;
+      margin-bottom: 28px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(58px, 7vw, 98px);
+      font-weight: 500;
+      line-height: 0.96;
+      letter-spacing: -4px;
+    }
+
+    .hero-copy h1 span {
+      color: var(--leaf);
+      font-style: italic;
+    }
+
+    .hero-copy p {
+      max-width: 560px;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 18px;
+    }
+
+    .hero-note {
+      margin-top: 35px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255, 255, 255, 0.13);
+      color: rgba(255, 255, 255, 0.58);
+      font-size: 14px;
+    }
+
+    /* CONTACT PANEL */
+
+    .contact-panel-wrap {
+      position: relative;
+      z-index: 3;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-panel {
+      width: 100%;
+      padding: 42px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 32px;
+      background: rgba(255, 255, 255, 0.93);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.18);
+    }
+
+    .panel-title {
+      margin-bottom: 28px;
+    }
+
+    .panel-title span {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .panel-title h2 {
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 40px;
+      font-weight: 500;
+      line-height: 1.1;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 17px;
+      align-items: center;
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: var(--white);
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(45, 118, 83, 0.28);
+      box-shadow: 0 16px 34px rgba(18, 61, 44, 0.1);
+    }
+
+    .contact-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: #e9f1e5;
+      color: var(--forest);
+    }
+
+    .contact-icon svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.9;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contact-info small {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .contact-info strong {
+      color: var(--forest);
+      font-size: 18px;
+      word-break: break-word;
+    }
+
+    .quick-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .action-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 800;
+      transition: 0.3s ease;
+    }
+
+    .action-primary {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .action-secondary {
+      border: 1px solid rgba(18, 61, 44, 0.17);
+      color: var(--forest);
+      background: var(--white);
+    }
+
+    .action-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(18, 61, 44, 0.14);
+    }
+
+    /* PURPOSE SECTION */
+
+    .purpose-section {
+      padding: 120px 0;
+    }
+
+    .purpose-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 75px;
+      align-items: center;
+    }
+
+    .purpose-copy span {
+      display: inline-block;
+      margin-bottom: 16px;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .purpose-copy h2 {
+      margin-bottom: 22px;
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(46px, 6vw, 74px);
+      font-weight: 500;
+      line-height: 1.03;
+      letter-spacing: -2px;
+    }
+
+    .purpose-copy p {
+      max-width: 560px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .purpose-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .purpose-item {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 17px;
+      align-items: center;
+      padding: 23px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.82);
+      transition: 0.3s ease;
+    }
+
+    .purpose-item:hover {
+      transform: translateX(8px);
+      box-shadow: 0 16px 35px rgba(18, 61, 44, 0.08);
+    }
+
+    .purpose-number {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--forest);
+      background: #e9f1e5;
+      font-weight: 800;
+    }
+
+    .purpose-item h3 {
+      margin-bottom: 3px;
+      color: var(--forest);
+      font-size: 19px;
+    }
+
+    .purpose-item p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* SOCIAL SECTION */
+
+    .social-section {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 55px;
+      padding: 85px 45px;
+      border-radius: 40px;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 20% 25%,
+          rgba(188, 214, 178, 0.28),
+          transparent 28%
+        ),
+        linear-gradient(135deg, var(--deep), #205d42);
+    }
+
+    .social-section h2 {
+      margin-bottom: 16px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 6vw, 72px);
+      font-weight: 500;
+      line-height: 1.04;
+      letter-spacing: -2px;
+    }
+
+    .social-section p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 17px;
+    }
+
+    .social-links {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+    }
+
+    .social-link {
+      min-width: 118px;
+      padding: 13px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.07);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .social-link:hover {
+      background: var(--white);
+      color: var(--forest);
+      transform: translateY(-3px);
+    }
+
+    footer {
+      padding: 0 20px 45px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 980px) {
+      .contact-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 80px 48px 35px;
+      }
+
+      .contact-panel-wrap {
+        padding: 20px 48px 65px;
+      }
+
+      .purpose-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page-shell {
+        width: min(100% - 24px, 1240px);
+      }
+
+      .topbar {
+        padding: 16px 0;
+      }
+
+      .contact-hero,
+      .social-section {
+        border-radius: 28px;
+      }
+
+      .hero-copy {
+        padding: 65px 26px 25px;
+      }
+
+      .hero-copy h1 {
+        font-size: 56px;
+        letter-spacing: -2px;
+      }
+
+      .hero-copy p {
+        font-size: 17px;
+      }
+
+      .contact-panel-wrap {
+        padding: 10px 18px 35px;
+      }
+
+      .contact-panel {
+        padding: 27px 20px;
+        border-radius: 25px;
+      }
+
+      .panel-title h2 {
+        font-size: 34px;
+      }
+
+      .contact-card {
+        grid-template-columns: 50px 1fr;
+        padding: 17px;
+      }
+
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 16px;
+      }
+
+      .contact-info strong {
+        font-size: 16px;
+      }
+
+      .quick-actions {
+        grid-template-columns: 1fr;
+      }
+
+      .purpose-section {
+        padding: 85px 0;
+      }
+
+      .purpose-copy h2 {
+        font-size: 45px;
+      }
+
+      .purpose-item {
+        grid-template-columns: 48px 1fr;
+        padding: 19px;
+      }
+
+      .purpose-number {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
+      }
+
+      .social-section {
+        padding: 70px 24px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand {
+        font-size: 21px;
+      }
+
+      .back-home {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .hero-copy h1 {
+        font-size: 48px;
+      }
+
+      .social-link {
+        min-width: 105px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <a href="index.html">← Back to Home</a>
+  <header class="topbar">
 
-  <h1>Contact Grenvey</h1>
+    <div class="page-shell topbar-inner">
 
-  <p>
-    For business enquiries, product development, manufacturing,
-    distribution or general information, please contact us.
-  </p>
-
-  <div class="contact-box">
-
-    <p>
-      <strong>Email:</strong><br>
-      <a href="mailto:info@grenvey.com">
-        info@grenvey.com
+      <a href="index.html" class="brand">
+        Grenvey
       </a>
-    </p>
 
-    <p>
-      <strong>Phone:</strong><br>
-      <a href="tel:+919585808590">
-        +91 95858 08590
+      <a href="index.html" class="back-home">
+        <span>←</span>
+        Back to Home
       </a>
-    </p>
 
-   <p>
-  <strong>Websites:</strong><br>
+    </div>
 
-  <a href="https://grenvey.com" target="_blank">
-    www.grenvey.com
-  </a>
+  </header>
 
-  <br><br>
+  <main>
 
-  <a href="https://grenvey.in" target="_blank">
-    www.grenvey.in
-  </a>
-</p>
+    <div class="page-shell">
 
-  </div>
+      <section class="contact-hero">
+
+        <div class="hero-copy">
+
+          <div class="hero-label">
+            Contact Grenvey
+          </div>
+
+          <h1>
+            Let’s build
+            something
+            <span>meaningful.</span>
+          </h1>
+
+          <p>
+            For business enquiries, product development,
+            manufacturing, distribution or general information,
+            connect with Grenvey through the details provided here.
+          </p>
+
+          <div class="hero-note">
+            We value clear conversations, responsible partnerships
+            and long-term relationships.
+          </div>
+
+        </div>
+
+        <div class="contact-panel-wrap">
+
+          <div class="contact-panel">
+
+            <div class="panel-title">
+
+              <span>
+                Direct Contact
+              </span>
+
+              <h2>
+                Start a conversation.
+              </h2>
+
+            </div>
+
+            <div class="contact-list">
+
+              <a
+                href="mailto:info@grenvey.com"
+                class="contact-card"
+              >
+
+                <div class="contact-icon">
+
+                  <svg viewBox="0 0 24 24">
+                    <path d="M3 6h18v12H3z"></path>
+                    <path d="m3 7 9 6 9-6"></path>
+                  </svg>
+
+                </div>
+
+                <div class="contact-info">
+
+                  <small>
+                    Email
+                  </small>
+
+                  <strong>
+                    info@grenvey.com
+                  </strong>
+
+                </div>
+
+              </a>
+
+              <a
+                href="tel:+919585808590"
+                class="contact-card"
+              >
+
+                <div class="contact-icon">
+
+                  <svg viewBox="0 0 24 24">
+                    <path
+                      d="M7 3h3l1.5 4-2 1.5a15 15 0 0 0 6 6l1.5-2L21 14v3c0 2-2 4-4 4C9 20 4 15 3 7c0-2 2-4 4-4z"
+                    ></path>
+                  </svg>
+
+                </div>
+
+                <div class="contact-info">
+
+                  <small>
+                    Phone
+                  </small>
+
+                  <strong>
+                    +91 95858 08590
+                  </strong>
+
+                </div>
+
+              </a>
+
+              <a
+                href="https://grenvey.com"
+                class="contact-card"
+              >
+
+                <div class="contact-icon">
+
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M3 12h18"></path>
+                    <path d="M12 3c3 3 3 15 0 18"></path>
+                    <path d="M12 3c-3 3-3 15 0 18"></path>
+                  </svg>
+
+                </div>
+
+                <div class="contact-info">
+
+                  <small>
+                    Official Website
+                  </small>
+
+                  <strong>
+                    www.grenvey.com
+                  </strong>
+
+                </div>
+
+              </a>
+
+              <a
+                href="https://grenvey.in"
+                class="contact-card"
+              >
+
+                <div class="contact-icon">
+
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M3 12h18"></path>
+                    <path d="M12 3c3 3 3 15 0 18"></path>
+                    <path d="M12 3c-3 3-3 15 0 18"></path>
+                  </svg>
+
+                </div>
+
+                <div class="contact-info">
+
+                  <small>
+                    India Website
+                  </small>
+
+                  <strong>
+                    www.grenvey.in
+                  </strong>
+
+                </div>
+
+              </a>
+
+            </div>
+
+            <div class="quick-actions">
+
+              <a
+                href="https://wa.me/919585808590"
+                class="action-button action-primary"
+              >
+                WhatsApp Grenvey
+                <span>→</span>
+              </a>
+
+              <a
+                href="mailto:info@grenvey.com"
+                class="action-button action-secondary"
+              >
+                Send an Email
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="purpose-section">
+
+        <div class="purpose-grid">
+
+          <div class="purpose-copy">
+
+            <span>
+              Why Connect
+            </span>
+
+            <h2>
+              Good partnerships begin with one conversation.
+            </h2>
+
+            <p>
+              Grenvey welcomes conversations related to responsible
+              product development, manufacturing, distribution,
+              professional guidance and long-term collaboration.
+            </p>
+
+          </div>
+
+          <div class="purpose-list">
+
+            <div class="purpose-item">
+
+              <div class="purpose-number">
+                01
+              </div>
+
+              <div>
+
+                <h3>
+                  Product Development
+                </h3>
+
+                <p>
+                  Research, formulation and professional development support.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="purpose-item">
+
+              <div class="purpose-number">
+                02
+              </div>
+
+              <div>
+
+                <h3>
+                  Manufacturing
+                </h3>
+
+                <p>
+                  Responsible production and quality-focused partnerships.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="purpose-item">
+
+              <div class="purpose-number">
+                03
+              </div>
+
+              <div>
+
+                <h3>
+                  Distribution
+                </h3>
+
+                <p>
+                  Opportunities to grow Grenvey through trusted networks.
+                </p>
+
+              </div>
+
+            </div>
+
+            <div class="purpose-item">
+
+              <div class="purpose-number">
+                04
+              </div>
+
+              <div>
+
+                <h3>
+                  General Enquiries
+                </h3>
+
+                <p>
+                  Questions, suggestions and conversations about Grenvey.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="social-section">
+
+        <div class="hero-label" style="margin-inline:auto;">
+          Stay Connected
+        </div>
+
+        <h2>
+          Follow the Grenvey journey.
+        </h2>
+
+        <p>
+          New ideas, product progress and the story of building
+          thoughtful everyday nutrition.
+        </p>
+
+        <div class="social-links">
+
+          <a href="https://www.instagram.com/grenveyofficial?igsh=cmE5ejNubDlrM3Zl" class="social-link">
+            Instagram
+          </a>
+
+          <a href="https://youtube.com/@grenveyofficial?si=nQH-K_ywVvAAA-hg" class="social-link">
+            YouTube
+          </a>
+
+          <a href="https://www.facebook.com/grenveyofficial" class="social-link">
+            Facebook
+          </a>
+
+          <a href="https://www.threads.net/@grenveyofficial" class="social-link">
+            Threads
+          </a>
+
+          <a href="https://x.com/grenveyofficial" class="social-link">
+            X
+          </a>
+
+          <a href="https://www.pinterest.com/grenveyofficial" class="social-link">
+            Pinterest
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Grenvey. Thoughtful nutrition for everyday life.
+  </footer>
 
 </body>
+
 </html>
