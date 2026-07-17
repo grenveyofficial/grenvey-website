@@ -4,56 +4,1297 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Discover Grenvey's mission to build simple, thoughtful and trustworthy nutrition for everyday life."
+  >
+
   <title>Our Mission | Grenvey</title>
 
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: auto;
-      padding: 40px;
-      line-height: 1.8;
-      background: #fafafa;
-      color: #333;
+    :root {
+      --forest: #123d2c;
+      --deep-green: #0b2c20;
+      --green: #286b4c;
+      --leaf: #7eaa72;
+      --soft-leaf: #b9d5b0;
+      --cream: #f7f5ee;
+      --light-green: #eaf2e6;
+      --white: #ffffff;
+      --text: #203229;
+      --muted: #68736d;
+      --border: rgba(18, 61, 44, 0.1);
+      --shadow: 0 25px 70px rgba(18, 61, 44, 0.12);
     }
 
-    h1 {
-      color: #2e7d32;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
     a {
+      color: inherit;
+    }
+
+    .page-shell {
+      width: min(1240px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+
+    .topbar {
+      padding: 22px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
       text-decoration: none;
-      color: #2e7d32;
-      font-weight: bold;
+      color: var(--forest);
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+    }
+
+    .back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      text-decoration: none;
+      color: var(--forest);
+      border: 1px solid rgba(18, 61, 44, 0.18);
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s ease;
+    }
+
+    .back-home:hover {
+      background: var(--forest);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .mission-hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.06fr 0.94fr;
+      min-height: 690px;
+      overflow: hidden;
+      border-radius: 42px;
+      background:
+        radial-gradient(
+          circle at 78% 35%,
+          rgba(126, 170, 114, 0.34),
+          transparent 28%
+        ),
+        linear-gradient(135deg, var(--deep-green), var(--forest));
+      box-shadow: var(--shadow);
+    }
+
+    .mission-hero::before {
+      content: "";
+      position: absolute;
+      width: 580px;
+      height: 580px;
+      right: -210px;
+      top: -240px;
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 50%;
+    }
+
+    .mission-hero::after {
+      content: "";
+      position: absolute;
+      width: 760px;
+      height: 760px;
+      right: -350px;
+      bottom: -500px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 95px 68px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      color: var(--white);
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      width: fit-content;
+      color: var(--soft-leaf);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero-label::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: var(--soft-leaf);
+    }
+
+    .hero-content h1 {
+      max-width: 700px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(62px, 7vw, 104px);
+      line-height: 0.95;
+      font-weight: 500;
+      letter-spacing: -4px;
+      margin-bottom: 30px;
+    }
+
+    .hero-content h1 span {
+      color: var(--soft-leaf);
+      font-style: italic;
+    }
+
+    .hero-content p {
+      max-width: 620px;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 19px;
+      line-height: 1.8;
+    }
+
+    /* PLANT VISUAL */
+
+    .hero-visual {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 620px;
+      padding: 40px;
+    }
+
+    .plant-visual {
+      position: relative;
+      width: 390px;
+      height: 500px;
+    }
+
+    .plant-glow {
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      left: 50%;
+      top: 48%;
+      transform: translate(-50%, -50%);
+      background: rgba(185, 213, 176, 0.12);
+      border-radius: 50%;
+      filter: blur(12px);
+    }
+
+    .orbit {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 50%;
+    }
+
+    .orbit-one {
+      width: 330px;
+      height: 330px;
+      left: 30px;
+      top: 90px;
+    }
+
+    .orbit-two {
+      width: 420px;
+      height: 420px;
+      left: -15px;
+      top: 45px;
+    }
+
+    .stem {
+      position: absolute;
+      width: 6px;
+      height: 300px;
+      left: 50%;
+      bottom: 78px;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: linear-gradient(to top, #6f9767, #c5ddb9);
+      box-shadow: 0 0 25px rgba(197, 221, 185, 0.2);
+    }
+
+    .leaf {
+      position: absolute;
+      width: 132px;
+      height: 84px;
+      border-radius: 100% 0 100% 0;
+      background: linear-gradient(135deg, #b4d1a8, #6e9b66);
+      box-shadow: 0 22px 38px rgba(0, 0, 0, 0.14);
+    }
+
+    .leaf::after {
+      content: "";
+      position: absolute;
+      width: 75%;
+      height: 2px;
+      left: 12%;
+      top: 51%;
+      background: rgba(255, 255, 255, 0.35);
+      transform: rotate(-24deg);
+      transform-origin: left center;
+    }
+
+    .leaf-one {
+      left: 55px;
+      top: 205px;
+      transform: rotate(-9deg);
+    }
+
+    .leaf-two {
+      right: 48px;
+      top: 135px;
+      transform: rotate(95deg);
+    }
+
+    .leaf-three {
+      left: 76px;
+      top: 68px;
+      transform: rotate(-18deg) scale(0.9);
+    }
+
+    .seed {
+      position: absolute;
+      width: 94px;
+      height: 118px;
+      left: 50%;
+      bottom: 25px;
+      transform: translateX(-50%) rotate(10deg);
+      border-radius: 60% 40% 60% 40%;
+      background: linear-gradient(145deg, #c49d6c, #7f5934);
+      box-shadow:
+        inset -12px -12px 22px rgba(0, 0, 0, 0.18),
+        0 24px 45px rgba(0, 0, 0, 0.2);
+    }
+
+    .seed::after {
+      content: "";
+      position: absolute;
+      width: 2px;
+      height: 77px;
+      top: 18px;
+      left: 49px;
+      background: rgba(255, 255, 255, 0.23);
+      transform: rotate(8deg);
+    }
+
+    /* INTRO */
+
+    .intro-section {
+      padding: 125px 20px 75px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 17px;
+    }
+
+    .intro-section h2 {
+      max-width: 850px;
+      margin: 0 auto 25px;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--forest);
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.06;
+      font-weight: 500;
+      letter-spacing: -2px;
+    }
+
+    .intro-section p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    /* TREE JOURNEY */
+
+    .tree-section {
+      position: relative;
+      padding: 55px 0 130px;
+    }
+
+    .tree-wrap {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .tree-trunk {
+      position: absolute;
+      width: 4px;
+      top: 0;
+      bottom: 95px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 999px;
+      background: linear-gradient(
+        to bottom,
+        transparent,
+        #a8c49f 7%,
+        #4c7a5d 48%,
+        #123d2c 94%
+      );
+    }
+
+    .tree-trunk::before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      left: 50%;
+      top: -3px;
+      transform: translateX(-50%);
+      background: var(--forest);
+      border: 7px solid var(--light-green);
+      border-radius: 50%;
+      box-shadow: 0 0 0 1px rgba(18, 61, 44, 0.1);
+    }
+
+    .tree-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 110px 1fr;
+      align-items: center;
+      min-height: 235px;
+      opacity: 0;
+      transform: translateY(38px);
+      transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    }
+
+    .tree-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .tree-item:nth-of-type(odd) .tree-card {
+      grid-column: 1;
+    }
+
+    .tree-item:nth-of-type(even) .tree-card {
+      grid-column: 3;
+    }
+
+    .tree-node {
+      grid-column: 2;
+      width: 76px;
+      height: 76px;
+      margin: auto;
+      position: relative;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--forest);
+      border: 10px solid var(--cream);
+      color: var(--white);
+      font-size: 25px;
+      font-weight: 800;
+      box-shadow:
+        0 0 0 1px rgba(18, 61, 44, 0.12),
+        0 18px 38px rgba(18, 61, 44, 0.18);
+    }
+
+    .tree-card {
+      position: relative;
+      padding: 39px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 18px 50px rgba(18, 61, 44, 0.08);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .tree-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 65px rgba(18, 61, 44, 0.14);
+    }
+
+    .tree-card::after {
+      content: "";
+      position: absolute;
+      width: 55px;
+      height: 2px;
+      top: 50%;
+      background: rgba(40, 107, 76, 0.22);
+    }
+
+    .tree-item:nth-of-type(odd) .tree-card::after {
+      right: -55px;
+    }
+
+    .tree-item:nth-of-type(even) .tree-card::after {
+      left: -55px;
+    }
+
+    .tree-number {
+      color: var(--leaf);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 11px;
+    }
+
+    .tree-card h3 {
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 35px;
+      line-height: 1.15;
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+
+    .tree-card p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* TREE CROWN */
+
+    .tree-crown {
+      position: relative;
+      z-index: 5;
+      width: 170px;
+      height: 170px;
+      margin: 20px auto 0;
+      display: grid;
+      place-items: center;
+    }
+
+    .crown-circle {
+      width: 122px;
+      height: 122px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #4f8360, #123d2c);
+      color: var(--white);
+      font-size: 38px;
+      box-shadow:
+        0 0 0 18px var(--light-green),
+        0 24px 60px rgba(18, 61, 44, 0.23);
+    }
+
+    .crown-leaf {
+      position: absolute;
+      width: 74px;
+      height: 47px;
+      background: var(--leaf);
+      border-radius: 100% 0 100% 0;
+    }
+
+    .crown-leaf-one {
+      left: -2px;
+      top: 40px;
+      transform: rotate(-30deg);
+    }
+
+    .crown-leaf-two {
+      right: -2px;
+      top: 40px;
+      transform: rotate(120deg);
+    }
+
+    .crown-leaf-three {
+      top: -5px;
+      left: 48px;
+      transform: rotate(46deg);
+    }
+
+    /* PROMISE */
+
+    .promise-section {
+      position: relative;
+      overflow: hidden;
+      padding: 90px 70px;
+      margin-bottom: 110px;
+      border-radius: 38px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .promise-section::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      right: -145px;
+      top: -175px;
+      border-radius: 50%;
+      background: var(--light-green);
+    }
+
+    .promise-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .promise-title h2 {
+      color: var(--forest);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 5vw, 72px);
+      line-height: 1.03;
+      font-weight: 500;
+      letter-spacing: -2px;
+    }
+
+    .promise-copy {
+      display: grid;
+      gap: 25px;
+    }
+
+    .promise-row {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      align-items: flex-start;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(18, 61, 44, 0.09);
+    }
+
+    .promise-row:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .promise-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--light-green);
+      color: var(--forest);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .promise-row h3 {
+      color: var(--forest);
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+
+    .promise-row p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* FINAL CTA */
+
+    .closing-section {
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      margin-bottom: 55px;
+      padding: 90px 40px;
+      border-radius: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--white);
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(126, 170, 114, 0.28),
+          transparent 29%
+        ),
+        linear-gradient(135deg, var(--deep-green), #1e5c41);
+    }
+
+    .closing-section::before,
+    .closing-section::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 50%;
+    }
+
+    .closing-section::before {
+      width: 470px;
+      height: 470px;
+      left: -185px;
+      bottom: -255px;
+    }
+
+    .closing-section::after {
+      width: 640px;
+      height: 640px;
+      right: -255px;
+      top: -335px;
+    }
+
+    .closing-content {
+      position: relative;
+      z-index: 2;
+      max-width: 820px;
+    }
+
+    .closing-content h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 6vw, 82px);
+      line-height: 1.02;
+      letter-spacing: -3px;
+      font-weight: 500;
+      margin-bottom: 23px;
+    }
+
+    .closing-content p {
+      max-width: 690px;
+      margin: 0 auto;
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 18px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 35px;
+      padding: 16px 29px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--forest);
+      text-decoration: none;
+      font-weight: 800;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    footer {
+      padding: 0 20px 45px;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .mission-hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-content {
+        padding: 80px 48px 35px;
+      }
+
+      .hero-visual {
+        min-height: 480px;
+      }
+
+      .promise-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .page-shell {
+        width: min(100% - 24px, 1240px);
+      }
+
+      .topbar {
+        padding: 16px 0;
+      }
+
+      .mission-hero {
+        border-radius: 28px;
+      }
+
+      .hero-content {
+        padding: 65px 26px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 57px;
+        letter-spacing: -2px;
+      }
+
+      .hero-content p {
+        font-size: 17px;
+      }
+
+      .hero-visual {
+        min-height: 390px;
+        padding: 10px;
+      }
+
+      .plant-visual {
+        transform: scale(0.75);
+      }
+
+      .intro-section {
+        padding: 90px 10px 50px;
+      }
+
+      .tree-section {
+        padding: 35px 0 95px;
+      }
+
+      .tree-trunk {
+        left: 37px;
+        transform: none;
+      }
+
+      .tree-item {
+        grid-template-columns: 74px 1fr;
+        min-height: unset;
+        margin-bottom: 35px;
+        align-items: start;
+      }
+
+      .tree-item:nth-of-type(odd) .tree-card,
+      .tree-item:nth-of-type(even) .tree-card {
+        grid-column: 2;
+        grid-row: 1;
+      }
+
+      .tree-node {
+        grid-column: 1;
+        grid-row: 1;
+        width: 58px;
+        height: 58px;
+        margin-top: 25px;
+        border-width: 8px;
+        font-size: 20px;
+      }
+
+      .tree-card {
+        padding: 28px 24px;
+        border-radius: 24px;
+      }
+
+      .tree-card::after {
+        width: 22px;
+        left: -22px !important;
+        right: auto !important;
+      }
+
+      .tree-card h3 {
+        font-size: 29px;
+      }
+
+      .tree-crown {
+        margin-left: -48px;
+      }
+
+      .promise-section {
+        padding: 65px 25px;
+        margin-bottom: 80px;
+        border-radius: 28px;
+      }
+
+      .promise-row {
+        grid-template-columns: 48px 1fr;
+        gap: 14px;
+      }
+
+      .promise-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
+      }
+
+      .closing-section {
+        min-height: 430px;
+        padding: 70px 24px;
+        border-radius: 28px;
+      }
+
+      .closing-content h2 {
+        letter-spacing: -2px;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .brand {
+        font-size: 21px;
+      }
+
+      .back-home {
+        padding: 9px 13px;
+        font-size: 12px;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+
+      .hero-visual {
+        min-height: 340px;
+      }
+
+      .plant-visual {
+        transform: scale(0.62);
+      }
+
+      .intro-section h2 {
+        font-size: 41px;
+      }
+
+      .tree-card h3 {
+        font-size: 26px;
+      }
+
+      .closing-content h2 {
+        font-size: 45px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <a href="index.html">← Back to Home</a>
+  <header class="topbar">
+    <div class="page-shell topbar-inner">
 
-  <h1>Our Mission</h1>
+      <a href="index.html" class="brand">
+        Grenvey
+      </a>
 
-  <p>
-    Grenvey’s mission is to create simple, convenient and trustworthy
-    nutrition products designed for everyday life.
-  </p>
+      <a href="index.html" class="back-home">
+        <span>←</span>
+        Back to Home
+      </a>
 
-  <p>
-    We aim to combine thoughtful ingredient selection, responsible product
-    development and clear communication.
-  </p>
+    </div>
+  </header>
 
-  <p>
-    Our focus is to help people make better nutrition choices without making
-    healthy living feel complicated.
-  </p>
+  <main>
 
-  <p>
-    Every Grenvey product will be developed with attention to quality,
-    food safety, taste and practical usefulness.
-  </p>
+    <div class="page-shell">
+
+      <section class="mission-hero">
+
+        <div class="hero-content">
+
+          <div class="hero-label">
+            Our Mission
+          </div>
+
+          <h1>
+            From one seed,
+            a healthier
+            <span>future.</span>
+          </h1>
+
+          <p>
+            Grenvey exists to make everyday nutrition simpler,
+            more thoughtful and more trustworthy — beginning with
+            carefully developed products and growing through
+            genuine customer trust.
+          </p>
+
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+
+          <div class="plant-visual">
+
+            <div class="plant-glow"></div>
+
+            <div class="orbit orbit-one"></div>
+            <div class="orbit orbit-two"></div>
+
+            <div class="stem"></div>
+
+            <div class="leaf leaf-one"></div>
+            <div class="leaf leaf-two"></div>
+            <div class="leaf leaf-three"></div>
+
+            <div class="seed"></div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="intro-section">
+
+        <span class="section-label">
+          The Grenvey Growth Story
+        </span>
+
+        <h2>
+          Strong brands grow from strong roots.
+        </h2>
+
+        <p>
+          Our mission is not limited to creating one product.
+          It is about building a responsible nutrition brand,
+          step by step, with quality, honesty and long-term purpose
+          at the centre of every decision.
+        </p>
+
+      </section>
+
+      <section class="tree-section">
+
+        <div class="tree-wrap">
+
+          <div class="tree-trunk"></div>
+
+          <article class="tree-item">
+
+            <div class="tree-card">
+
+              <div class="tree-number">
+                Root 01
+              </div>
+
+              <h3>
+                Begin with real needs
+              </h3>
+
+              <p>
+                Every Grenvey product begins by understanding
+                real nutritional challenges faced in everyday life.
+                We do not create products merely to follow trends.
+              </p>
+
+            </div>
+
+            <div class="tree-node">
+              01
+            </div>
+
+          </article>
+
+          <article class="tree-item">
+
+            <div class="tree-node">
+              02
+            </div>
+
+            <div class="tree-card">
+
+              <div class="tree-number">
+                Root 02
+              </div>
+
+              <h3>
+                Develop with care
+              </h3>
+
+              <p>
+                Ingredient selection, formulation, taste, convenience
+                and safety are considered thoughtfully before a product
+                reaches the customer.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="tree-item">
+
+            <div class="tree-card">
+
+              <div class="tree-number">
+                Branch 03
+              </div>
+
+              <h3>
+                Keep nutrition simple
+              </h3>
+
+              <p>
+                Good nutrition should fit naturally into daily routines.
+                Our aim is to create products that are easy to understand,
+                convenient to use and pleasant to consume.
+              </p>
+
+            </div>
+
+            <div class="tree-node">
+              03
+            </div>
+
+          </article>
+
+          <article class="tree-item">
+
+            <div class="tree-node">
+              04
+            </div>
+
+            <div class="tree-card">
+
+              <div class="tree-number">
+                Branch 04
+              </div>
+
+              <h3>
+                Grow through trust
+              </h3>
+
+              <p>
+                We want every customer experience to strengthen confidence
+                in Grenvey through transparency, consistency and continuous
+                improvement.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article class="tree-item">
+
+            <div class="tree-card">
+
+              <div class="tree-number">
+                Future 05
+              </div>
+
+              <h3>
+                Build a healthier future
+              </h3>
+
+              <p>
+                Our long-term vision is to grow Grenvey into a trusted
+                Indian nutrition brand that supports families through
+                thoughtful and responsible products.
+              </p>
+
+            </div>
+
+            <div class="tree-node">
+              05
+            </div>
+
+          </article>
+
+          <div class="tree-crown" aria-hidden="true">
+
+            <div class="crown-leaf crown-leaf-one"></div>
+            <div class="crown-leaf crown-leaf-two"></div>
+            <div class="crown-leaf crown-leaf-three"></div>
+
+            <div class="crown-circle">
+              ✦
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="promise-section">
+
+        <div class="promise-grid">
+
+          <div class="promise-title">
+
+            <span class="section-label">
+              Our Promise
+            </span>
+
+            <h2>
+              What will always remain at our roots.
+            </h2>
+
+          </div>
+
+          <div class="promise-copy">
+
+            <div class="promise-row">
+
+              <div class="promise-icon">
+                01
+              </div>
+
+              <div>
+                <h3>
+                  Thoughtful ingredients
+                </h3>
+
+                <p>
+                  Ingredients selected with purpose, not simply added
+                  to make a label look impressive.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="promise-row">
+
+              <div class="promise-icon">
+                02
+              </div>
+
+              <div>
+                <h3>
+                  Responsible development
+                </h3>
+
+                <p>
+                  Products developed through careful formulation,
+                  evaluation and quality-focused decisions.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="promise-row">
+
+              <div class="promise-icon">
+                03
+              </div>
+
+              <div>
+                <h3>
+                  Honest communication
+                </h3>
+
+                <p>
+                  Clear information without unnecessary confusion,
+                  exaggerated promises or complicated language.
+                </p>
+              </div>
+
+            </div>
+
+            <div class="promise-row">
+
+              <div class="promise-icon">
+                04
+              </div>
+
+              <div>
+                <h3>
+                  Continuous improvement
+                </h3>
+
+                <p>
+                  Every review, experience and customer suggestion
+                  becomes an opportunity to make Grenvey better.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="closing-section">
+
+        <div class="closing-content">
+
+          <span class="hero-label">
+            Growing With Purpose
+          </span>
+
+          <h2>
+            This is only the beginning.
+          </h2>
+
+          <p>
+            Grenvey is growing one thoughtful product, one customer
+            and one promise at a time — with the aim of making
+            everyday nutrition more meaningful.
+          </p>
+
+          <a href="index.html#contact" class="cta-button">
+            Connect with Grenvey
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <footer>
+    © 2026 Grenvey. Thoughtful nutrition for everyday life.
+  </footer>
+
+  <script>
+    const treeItems = document.querySelectorAll(".tree-item");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      },
+      {
+        threshold: 0.18
+      }
+    );
+
+    treeItems.forEach((item) => {
+      observer.observe(item);
+    });
+  </script>
 
 </body>
 </html>

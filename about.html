@@ -1,62 +1,445 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About Grenvey</title>
+  <title>About Grenvey</title>
 
-<style>
+  <style>
+    *{
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
 
-body{
-font-family:Arial,sans-serif;
-max-width:900px;
-margin:auto;
-padding:40px;
-line-height:1.8;
-background:#fafafa;
-color:#333;
-}
+    body{
+      font-family:Arial,sans-serif;
+      background:#f7f8f4;
+      color:#15382c;
+      line-height:1.7;
+    }
 
-h1{
-color:#2e7d32;
-}
+    a{
+      text-decoration:none;
+    }
 
-a{
-text-decoration:none;
-color:#2e7d32;
-font-weight:bold;
-}
+    .page{
+      width:min(1180px, calc(100% - 40px));
+      margin:auto;
+      padding:30px 0 80px;
+    }
 
-</style>
+    .back-link{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:#1f6f4a;
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:28px;
+    }
 
+    .hero{
+      position:relative;
+      overflow:hidden;
+      min-height:520px;
+      display:flex;
+      align-items:center;
+      padding:70px;
+      border-radius:32px;
+      background:
+        linear-gradient(
+          135deg,
+          #0f3f2e 0%,
+          #184f39 55%,
+          #246b4c 100%
+        );
+      color:#fff;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:50%;
+      right:-120px;
+      top:-130px;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:50%;
+      right:110px;
+      bottom:-130px;
+    }
+
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:760px;
+    }
+
+    .eyebrow{
+      margin-bottom:22px;
+      color:#b9dec8;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:4px;
+      text-transform:uppercase;
+    }
+
+    h1{
+      max-width:760px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(58px, 8vw, 105px);
+      line-height:.94;
+      font-weight:500;
+      letter-spacing:-4px;
+    }
+
+    .hero h1 em{
+      color:#bce0ca;
+      font-weight:400;
+    }
+
+    .hero-description{
+      max-width:650px;
+      margin-top:34px;
+      color:#dbe8df;
+      font-size:20px;
+      line-height:1.7;
+    }
+
+    .intro{
+      display:grid;
+      grid-template-columns:.8fr 1.2fr;
+      gap:70px;
+      padding:100px 20px;
+      align-items:start;
+    }
+
+    .section-label{
+      color:#24704e;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:3px;
+      text-transform:uppercase;
+    }
+
+    .intro h2,
+    .promise h2{
+      margin-top:18px;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:clamp(42px, 5vw, 70px);
+      font-weight:500;
+      line-height:1.05;
+      letter-spacing:-2px;
+    }
+
+    .intro-copy p{
+      margin-bottom:24px;
+      color:#52645c;
+      font-size:19px;
+      line-height:1.85;
+    }
+
+    .values-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:22px;
+      margin-bottom:90px;
+    }
+
+    .value-card{
+      position:relative;
+      min-height:300px;
+      padding:38px;
+      overflow:hidden;
+      background:#fff;
+      border:1px solid #dfe6df;
+      border-radius:24px;
+      transition:transform .3s ease, box-shadow .3s ease;
+    }
+
+    .value-card:hover{
+      transform:translateY(-7px);
+      box-shadow:0 24px 55px rgba(18,62,45,.10);
+    }
+
+    .value-number{
+      color:#8eaa9c;
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:18px;
+    }
+
+    .value-card h3{
+      margin-top:70px;
+      margin-bottom:15px;
+      font-family:Georgia, "Times New Roman", serif;
+      color:#113e2d;
+      font-size:36px;
+      font-weight:500;
+    }
+
+    .value-card p{
+      max-width:460px;
+      color:#62736a;
+      font-size:17px;
+    }
+
+    .value-card.featured{
+      background:#123f2e;
+      border-color:#123f2e;
+    }
+
+    .value-card.featured .value-number{
+      color:#acd1bb;
+    }
+
+    .value-card.featured h3{
+      color:#fff;
+    }
+
+    .value-card.featured p{
+      color:#d6e5dc;
+    }
+
+    .promise{
+      position:relative;
+      overflow:hidden;
+      padding:75px;
+      border-radius:30px;
+      background:#e7f0e9;
+    }
+
+    .promise::after{
+      content:"G";
+      position:absolute;
+      right:35px;
+      bottom:-95px;
+      color:rgba(18,63,46,.06);
+      font-family:Georgia, "Times New Roman", serif;
+      font-size:300px;
+      line-height:1;
+    }
+
+    .promise-content{
+      position:relative;
+      z-index:2;
+      max-width:800px;
+    }
+
+    .promise p{
+      max-width:700px;
+      margin-top:26px;
+      color:#52675d;
+      font-size:19px;
+    }
+
+    .home-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      margin-top:35px;
+      padding:15px 28px;
+      border-radius:999px;
+      background:#123f2e;
+      color:#fff;
+      font-weight:700;
+      transition:transform .3s ease, background .3s ease;
+    }
+
+    .home-button:hover{
+      background:#1c573f;
+      transform:translateY(-2px);
+    }
+
+    @media(max-width:800px){
+      .page{
+        width:min(100% - 24px, 1180px);
+        padding-top:18px;
+      }
+
+      .hero{
+        min-height:460px;
+        padding:42px 28px;
+        border-radius:24px;
+      }
+
+      h1{
+        letter-spacing:-2px;
+      }
+
+      .hero-description{
+        font-size:17px;
+      }
+
+      .intro{
+        grid-template-columns:1fr;
+        gap:32px;
+        padding:70px 10px;
+      }
+
+      .values-grid{
+        grid-template-columns:1fr;
+      }
+
+      .value-card{
+        min-height:260px;
+      }
+
+      .value-card h3{
+        margin-top:45px;
+      }
+
+      .promise{
+        padding:48px 28px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<a href="index.html">← Back to Home</a>
+  <main class="page">
 
-<h1>About Grenvey</h1>
+    <a href="index.html" class="back-link">
+      ← Back to Home
+    </a>
 
-<p>
-Grenvey is an upcoming Indian nutrition brand focused on creating simple,
-natural and trustworthy nutrition products.
-</p>
+    <section class="hero">
 
-<p>
-Our goal is to make healthy nutrition convenient for everyday people
-without unnecessary artificial ingredients.
-</p>
+      <div class="hero-content">
 
-<p>
-We believe nutrition should be easy to understand,
-honest and accessible.
-</p>
+        <p class="eyebrow">
+          About Grenvey
+        </p>
 
-<p>
-Our first product is currently under development and
-will be launched after proper formulation and testing.
-</p>
+        <h1>
+          Thoughtful nutrition,
+          <em>built with purpose.</em>
+        </h1>
+
+        <p class="hero-description">
+          Grenvey is an Indian nutrition brand being developed with
+          clarity, responsibility and long-term trust at its foundation.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="intro">
+
+      <div>
+        <p class="section-label">Our story</p>
+
+        <h2>
+          Nutrition should never feel confusing.
+        </h2>
+      </div>
+
+      <div class="intro-copy">
+
+        <p>
+          Grenvey began with a simple belief: everyday nutrition should be
+          easy to understand, thoughtfully formulated and honestly communicated.
+        </p>
+
+        <p>
+          Instead of rushing our first product to market, we are taking the time
+          to work through formulation, testing, usability and packaging before
+          introducing it.
+        </p>
+
+        <p>
+          Our ambition is not simply to launch another nutrition product.
+          We are building a brand people can understand, rely on and grow with.
+        </p>
+
+      </div>
+
+    </section>
+
+    <section class="values-grid">
+
+      <article class="value-card">
+        <span class="value-number">01</span>
+
+        <h3>Our Purpose</h3>
+
+        <p>
+          To make thoughtful nutrition simple, convenient and relevant
+          for everyday life.
+        </p>
+      </article>
+
+      <article class="value-card featured">
+        <span class="value-number">02</span>
+
+        <h3>Our Approach</h3>
+
+        <p>
+          Careful formulation, responsible testing and clear communication
+          guide every stage of development.
+        </p>
+      </article>
+
+      <article class="value-card featured">
+        <span class="value-number">03</span>
+
+        <h3>Our Values</h3>
+
+        <p>
+          Honesty, transparency and quality come before shortcuts,
+          exaggerated claims or unnecessary complexity.
+        </p>
+      </article>
+
+      <article class="value-card">
+        <span class="value-number">04</span>
+
+        <h3>Our Vision</h3>
+
+        <p>
+          To grow Grenvey into a trusted Indian nutrition brand,
+          built patiently and responsibly.
+        </p>
+      </article>
+
+    </section>
+
+    <section class="promise">
+
+      <div class="promise-content">
+
+        <p class="section-label">Our promise</p>
+
+        <h2>
+          We are building trust before building a product range.
+        </h2>
+
+        <p>
+          Every Grenvey product will be developed with care, tested responsibly
+          and communicated clearly before reaching customers.
+        </p>
+
+        <a href="index.html#contact" class="home-button">
+          Connect with Grenvey
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
 
 </body>
 </html>

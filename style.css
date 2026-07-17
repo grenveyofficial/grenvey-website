@@ -624,16 +624,6 @@ textarea {
   box-shadow: var(--shadow-soft);
 }
 
-.principle-card.featured {
-  color: var(--white);
-  background: var(--green-900);
-  border-color: transparent;
-}
-
-.principle-card.featured p,
-.principle-card.featured .principle-number {
-  color: rgba(255, 255, 255, 0.68);
-}
 
 .principle-number {
   color: var(--green-700);
@@ -1644,4 +1634,75 @@ textarea {
     width: 92%;
     padding: 20px;
   }
+}
+@media (min-width: 1051px) {
+  .hero-v4-visual {
+    padding-bottom: 140px;
+  }
+
+  .hero-photo {
+    inset: 0 35px 140px 0;
+  }
+
+  .hero-statement {
+    right: 0;
+    bottom: 20px;
+  }
+}
+.principle-card:hover {
+  color: var(--white);
+  background: var(--green-900);
+  border-color: transparent;
+}
+
+.principle-card:hover p,
+.principle-card:hover .principle-number {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.principle-card:hover .principle-icon {
+  color: var(--white);
+}
+.social-links{
+    display:flex;
+    justify-content:center;
+    gap:16px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.social-links a{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:50%;
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    transition:all .3s ease;
+}
+
+.social-links a:hover{
+    background:#fff;
+    color:#173c2e;
+    transform:translateY(-3px);
+}
+.button-dark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 28px;
+    background:#173c2e;
+    color:#fff !important;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s ease;
+}
+
+.button-dark:hover{
+    background:#21513d;
 }
